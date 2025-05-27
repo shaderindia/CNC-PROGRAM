@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CNC Program Generator with 3D Simulation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-container">
+        <header>
+            <h1>CNC Program Generator with 3D Simulation</h1>
+        </header>
+        <div class="content">
+            <!-- Input Section -->
+            <div class="input-section">
+                <h2>Input Parameters</h2>
+                <form id="cnc-form">
+                    <!-- Basic Inputs -->
+                    <div class="form-group">
+                        <label for="program-number">Program Number:</label>
+                        <input type="number" id="program-number" placeholder="e.g., 1001" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tool-number">Tool Number:</label>
+                        <input type="number" id="tool-number" placeholder="e.g., 1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="feed-rate">Feed Rate (mm/min):</label>
+                        <input type="number" id="feed-rate" placeholder="e.g., 200" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="spindle-speed">Spindle Speed (RPM):</label>
+                        <input type="number" id="spindle-speed" placeholder="e.g., 1500" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="parameters">Parameters (e.g., #1=50):</label>
+                        <textarea id="parameters" rows="3" placeholder="e.g., #1=50"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="loops">Conditional Loops:</label>
+                        <textarea id="loops" rows="3" placeholder="e.g., WHILE [#1 LT 10] DO 1 ... END 1"></textarea>
+                    </div>
+                    <button type="submit">Generate G-code</button>
+                </form>
+            </div>
+
+            <!-- 3D Visualization Section -->
+            <div class="visualization-section">
+                <h2>3D Toolpath Simulation</h2>
+                <div id="simulation-container"></div>
+            </div>
+
+            <!-- G-code Preview Section -->
+            <div class="gcode-section">
+                <h2>G-code Preview</h2>
+                <pre id="gcode-preview">(Your G-code will appear here)</pre>
+                <button id="download-btn" class="hidden">Download G-code</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.152.2/examples/js/controls/OrbitControls.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
