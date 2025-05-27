@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNC Program Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">CNC Program Generator for Fanuc Controls</h1>
+        <form id="cnc-form">
+            <div class="form-group">
+                <label for="program-number">Program Number (#1-9999):</label>
+                <input type="number" id="program-number" placeholder="e.g., 1001" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tool-number">Tool Number (#1-30):</label>
+                <input type="number" id="tool-number" placeholder="e.g., 1" required>
+            </div>
+
+            <div class="form-group">
+                <label for="feed-rate">Feed Rate (mm/min):</label>
+                <input type="number" id="feed-rate" placeholder="e.g., 200" required>
+            </div>
+
+            <div class="form-group">
+                <label for="spindle-speed">Spindle Speed (RPM):</label>
+                <input type="number" id="spindle-speed" placeholder="e.g., 1500" required>
+            </div>
+
+            <div class="form-group">
+                <label for="coordinates">Coordinates (X, Y, Z):</label>
+                <input type="text" id="coordinates" placeholder="e.g., X100 Y50 Z-10" required>
+            </div>
+
+            <button type="submit">Generate CNC Program</button>
+        </form>
+
+        <div id="output-section" class="hidden">
+            <h2>Generated G-code:</h2>
+            <pre id="gcode-output"></pre>
+            <button id="download-btn">Download G-code</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
